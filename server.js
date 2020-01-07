@@ -24,13 +24,18 @@ fastify.get('/api/timestamp/:date_string', async (request, reply) => {
     const date = new Date(DATE_STRING);
     return {"unix": date.getTime() ,"utc": date.toUTCString()};
   } else {
-    const unixtime = new Date(DATE_STRING * 1000);
+    const unixtime = new Date(DATE_STRING * 1);
     if (unixtime.toString() !== "Invalid Date") {
       return {"unix": unixtime.getTime() ,"utc": unixtime.toUTCString()};
     } else {
       return {"error" : "Invalid Date" };
     }
   }
+});
+
+fastify.get("/api/whoami", async (request, reply) => {
+  const userAgent = request.headers;
+  return {"ipaddress":userAgent["x-forwarded-for"],"language":userAgent["accept-language"], "software": userAgent["user-agent"]}
 });
 
 
