@@ -12,16 +12,14 @@ fastify.get('/', async (request, reply) => {
 
 fastify.get('/api/timestamp/:date_string', async (request, reply) => {
   const DATE_STRING = request.params.date_string;
-
   if (DATE_STRING === "") {
     const date = new Date(Date.now());
     return {"unix": date.getTime() ,"utc": date.toUTCString()};
-  } else if (DATE_STRING.includes("-")) {
+  } else if (DATE_STRING.includes("-") && new Date(DATE_STRING).toString() !== "Invalid Date") {
     const date = new Date(DATE_STRING);
     return {"unix": date.getTime() ,"utc": date.toUTCString()};
   } else {
     const unixtime = new Date(DATE_STRING * 1000);
-    console.log(unixtime.toString())
     if (unixtime.toString() !== "Invalid Date") {
       return {"unix": unixtime.getTime() ,"utc": unixtime.toUTCString()};
     } else {
