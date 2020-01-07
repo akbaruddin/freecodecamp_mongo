@@ -1,5 +1,10 @@
 const fastify = require('fastify')({ logger: true })
 
+fastify.register(require('fastify-cors'), { 
+  // put your options here
+  
+})
+
 // Declare a route
 fastify.get('/', async (request, reply) => {
   return { hello: 'world' }
