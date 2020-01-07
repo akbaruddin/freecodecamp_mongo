@@ -10,6 +10,11 @@ fastify.get('/', async (request, reply) => {
   return { hello: 'world' }
 })
 
+fastify.get('/api/timestamp', async (request, reply) => {
+  const date = new Date(Date.now());
+  return {"unix": date.getTime() ,"utc": date.toUTCString()};
+});
+
 fastify.get('/api/timestamp/:date_string', async (request, reply) => {
   const DATE_STRING = request.params.date_string;
   if (DATE_STRING === "") {
@@ -26,7 +31,8 @@ fastify.get('/api/timestamp/:date_string', async (request, reply) => {
       return {"error" : "Invalid Date" };
     }
   }
-})
+});
+
 
 // Run the server!
 const start = async () => {
