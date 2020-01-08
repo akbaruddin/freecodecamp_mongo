@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/Cellar/node/12.12.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js init
+
+PATH: 
+  /Users/akbar/Documents/cbin/:/Users/akbar/.poetry/bin:~/.composer/vendor/bin:/Users/akbar/pear/bin/:/usr/local/opt/gettext/bin:/usr/local/opt/sqlite/bin:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/akbar/pear/bin/pear:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/akbar/Documents/cbin/:/Users/akbar/.poetry/bin:~/.composer/vendor/bin:/Users/akbar/pear/bin/:/usr/local/opt/gettext/bin:/usr/local/opt/sqlite/bin:/usr/local/opt/openssl@1.1/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/Users/akbar/go_workspace/bin:/usr/local/opt/go/libexec/bin:/Users/akbar/go_workspace/bin:/usr/local/opt/go/libexec/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  12.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:136824:13)
+      at Interface.emit (events.js:210:5)
+      at Interface._ttyWrite (readline.js:887:16)
+      at ReadStream.onkeypress (readline.js:191:10)
+      at ReadStream.emit (events.js:210:5)
+      at emitKeys (internal/readline/utils.js:433:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1153:36)
+      at ReadStream.emit (events.js:210:5)
+      at addChunk (_stream_readable.js:308:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
