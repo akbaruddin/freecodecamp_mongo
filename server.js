@@ -1,9 +1,29 @@
 const fastify = require('fastify')({ logger: true })
+require('dotenv').config()
 
 fastify.register(require('fastify-cors'), { 
   // put your options here
   
 })
+
+fastify.register(require('fastify-multipart'), {
+  addToBody: true,
+  sharedSchemaId: 'MultipartFileType',
+})
+
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const urlSchema = new Schema({
+  original_url: String,
+  short_url: Number
+});
+
+mongoose.connect(process.env.MONGO_URI, {
+  useUnifiedTopology: true
+});
+
+
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
